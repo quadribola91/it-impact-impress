@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { 
   Laptop, 
   Code, 
@@ -15,7 +14,7 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/ui/carousel';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -68,13 +67,25 @@ const Skills: React.FC = () => {
       title: "IT Instruction",
       description: "Experienced educator teaching ICT, IT support, web development, and programming for both academic and industry standards."
     },
-    {
-      icon: <Users className="h-6 w-6" />,
-      title: "Data Processing",
-      description: "Skilled in organizing, analyzing and processing data to extract meaningful insights and support decision-making processes."
-    }
+    // {
+    //   icon: <Users className="h-6 w-6" />,
+    //   title: "Data Processing",
+    //   description: "Skilled in organizing, analyzing and processing data to extract meaningful insights and support decision-making processes."
+    // }
   ];
-  
+
+  const carouselRef = useRef<any>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (carouselRef.current) {
+        carouselRef.current.next();
+      }
+    }, 4000); // Change slide every 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="py-20 px-4 md:px-8 relative" id="skills">
       <div className="max-w-7xl mx-auto">
@@ -86,7 +97,7 @@ const Skills: React.FC = () => {
             Professional solutions and technical expertise I offer to clients and organizations.
           </p>
         </div>
-        
+
         <div className="reveal-element">
           <Carousel
             opts={{
@@ -94,6 +105,7 @@ const Skills: React.FC = () => {
               loop: true,
             }}
             className="w-full"
+            ref={carouselRef}
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {services.map((service, index) => (

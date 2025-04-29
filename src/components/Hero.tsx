@@ -2,8 +2,13 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import ThreeDCube from './ThreeDCube';
+import useTypewriter from '@/hooks/useTypewriter';
+
 
 const Hero: React.FC = () => {
+  const titles = ['IT Support Specialist', 'Frontend Developer', 'IT Instructor','Full-Stack Developer'];
+  const animatedText = useTypewriter(titles);
+
   return (
     <section className="min-h-screen w-full hero-gradient flex flex-col justify-center items-center relative px-4 md:px-8 overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzMTMxMzEiIGZpbGwtb3BhY2l0eT0iMC4wOSI+PHBhdGggZD0iTTM2IDM0djZoNnYtNmgtNnptMC0xMHYtNmg2djZoLTZ6Ii8+PC9nPjwvZz48L3N2Zz4=')] pointer-events-none opacity-10"></div>
@@ -13,9 +18,10 @@ const Hero: React.FC = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
             Hi, I'm <span className="text-gradient">Omobolarinwa Quadri</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
-            IT Support Specialist | Frontend Developer | IT Instructor
-          </p>
+                <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
+        {animatedText}
+      </p>
+
           <p className="text-muted-foreground max-w-xl mx-auto lg:mx-0">
             Building innovative solutions and sharing knowledge through technology.
           </p>
