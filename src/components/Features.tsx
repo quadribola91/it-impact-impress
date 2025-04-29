@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { 
-  Cube, 
   LayoutDashboard, 
   LayoutGrid, 
   ArrowRight
@@ -43,7 +42,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, del
 const Features: React.FC = () => {
   const features = [
     {
-      icon: <Cube className="h-6 w-6" />,
+      icon: <LayoutDashboard className="h-6 w-6" />,
       title: "3D Visualization",
       description: "Experience your data in three dimensions with our advanced visualization tools that bring clarity to complex information."
     },
