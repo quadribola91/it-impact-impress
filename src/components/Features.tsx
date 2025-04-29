@@ -8,19 +8,24 @@ import {
   BookOpen,
   Users
 } from 'lucide-react';
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from '@/components/ui/carousel';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
-interface SkillCardProps {
+interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
-  delay: number;
 }
 
-const SkillCard: React.FC<SkillCardProps> = ({ icon, title, description, delay }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => {
   return (
-    <Card className="glass-card overflow-hidden border-0 h-full" 
-      style={{ animationDelay: `${delay}ms` }}>
+    <Card className="glass-card overflow-hidden border-0 h-full">
       <CardHeader>
         <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
           {icon}
@@ -37,7 +42,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ icon, title, description, delay }
 };
 
 const Skills: React.FC = () => {
-  const skills = [
+  const services = [
     {
       icon: <Laptop className="h-6 w-6" />,
       title: "IT Support",
@@ -73,26 +78,41 @@ const Skills: React.FC = () => {
   return (
     <section className="py-20 px-4 md:px-8 relative" id="skills">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal-element">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            My <span className="text-gradient">Skills</span>
+            My <span className="text-gradient">Services</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Technical expertise and professional capabilities that I bring to every project and challenge.
+            Professional solutions and technical expertise I offer to clients and organizations.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skills.map((skill, index) => (
-            <div key={index} className="animate-fade-in opacity-0" style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'forwards' }}>
-              <SkillCard 
-                icon={skill.icon} 
-                title={skill.title} 
-                description={skill.description} 
-                delay={index * 100}
-              />
+        <div className="reveal-element">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {services.map((service, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="h-full">
+                    <ServiceCard 
+                      icon={service.icon} 
+                      title={service.title} 
+                      description={service.description}
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center mt-6 gap-2">
+              <CarouselPrevious className="static transform-none mx-2" />
+              <CarouselNext className="static transform-none mx-2" />
             </div>
-          ))}
+          </Carousel>
         </div>
       </div>
     </section>

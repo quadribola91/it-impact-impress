@@ -8,14 +8,13 @@ interface DonationOption {
 }
 
 const PaymentSupport: React.FC = () => {
-  const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
+  const [selectedAmount, setSelectedAmount] = useState<number | null>(5);
   const [customAmount, setCustomAmount] = useState<string>('');
 
   const donationOptions: DonationOption[] = [
     { amount: 5, label: '$5' },
     { amount: 10, label: '$10' },
     { amount: 25, label: '$25' },
-    { amount: 50, label: '$50' },
   ];
 
   const handleAmountSelect = (amount: number) => {
@@ -43,70 +42,52 @@ const PaymentSupport: React.FC = () => {
   };
 
   return (
-    <section className="py-20 px-4 md:px-8 relative bg-black/20" id="support">
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+    <section className="py-12 px-4 md:px-8 relative bg-black/20" id="support">
+      <div className="max-w-2xl mx-auto">
+        <div className="text-center mb-8 reveal-element">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">
             <span className="text-gradient">Support</span> My Work
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            If you find value in my content, projects, or tutorials, consider supporting my work.
+          <p className="text-muted-foreground max-w-xl mx-auto">
+            If you find value in my content or services, consider supporting my work.
           </p>
         </div>
         
-        <div className="glass-card p-8 rounded-lg">
-          <div className="mb-8">
-            <h3 className="text-2xl font-bold mb-4">Choose an Amount</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {donationOptions.map((option) => (
-                <Button
-                  key={option.amount}
-                  variant={selectedAmount === option.amount ? 'default' : 'outline'}
-                  className="w-full"
-                  onClick={() => handleAmountSelect(option.amount)}
-                >
-                  {option.label}
-                </Button>
-              ))}
+        <div className="glass-card p-6 rounded-lg reveal-element">
+          <div className="flex flex-col sm:flex-row items-center gap-4 mb-6">
+            <div className="w-full sm:w-auto">
+              <div className="flex flex-row sm:grid sm:grid-cols-3 gap-2">
+                {donationOptions.map((option) => (
+                  <Button
+                    key={option.amount}
+                    variant={selectedAmount === option.amount ? 'default' : 'outline'}
+                    className="w-full text-sm"
+                    onClick={() => handleAmountSelect(option.amount)}
+                  >
+                    {option.label}
+                  </Button>
+                ))}
+              </div>
             </div>
-          </div>
-          
-          <div className="mb-8">
-            <h3 className="text-xl font-bold mb-4">Or Enter a Custom Amount</h3>
-            <div className="flex items-center">
-              <span className="px-3 py-2 bg-muted text-muted-foreground rounded-l-md">$</span>
+            
+            <div className="flex items-center w-full">
+              <span className="px-2 py-2 bg-muted text-muted-foreground rounded-l-md">$</span>
               <input
                 type="text"
                 value={customAmount}
                 onChange={handleCustomAmountChange}
-                className="flex h-10 w-full rounded-r-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                placeholder="Enter amount"
+                className="flex h-10 w-full rounded-r-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                placeholder="Custom amount"
               />
             </div>
           </div>
           
-          <div className="mb-6">
-            <h3 className="text-xl font-bold mb-4">Payment Methods</h3>
-            <div className="flex space-x-4">
-              <div className="p-4 border border-border rounded-md flex-1 flex items-center justify-center">
-                <span>Credit Card</span>
-              </div>
-              <div className="p-4 border border-border rounded-md flex-1 flex items-center justify-center">
-                <span>PayPal</span>
-              </div>
-            </div>
-          </div>
-          
           <Button 
-            className="w-full rounded-full text-lg py-6"
+            className="w-full rounded-full"
             onClick={handleSubmit}
           >
             Support Now
           </Button>
-          
-          <p className="text-center text-sm text-muted-foreground mt-4">
-            All transactions are secure and encrypted. By supporting, you help me create more valuable content.
-          </p>
         </div>
       </div>
     </section>

@@ -7,7 +7,7 @@ const About: React.FC = () => {
     <section className="py-20 px-4 md:px-8 relative" id="about">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12">
-          <div className="w-full lg:w-1/2 aspect-square max-w-md mx-auto">
+          <div className="w-full lg:w-1/2 aspect-square max-w-md mx-auto reveal-element">
             <div className="relative h-full w-full rounded-2xl overflow-hidden glow-effect">
               {/* Profile Image Placeholder - Replace with your actual image */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center text-5xl font-bold">
@@ -16,7 +16,7 @@ const About: React.FC = () => {
             </div>
           </div>
           
-          <div className="w-full lg:w-1/2 space-y-6">
+          <div className="w-full lg:w-1/2 space-y-6 reveal-element">
             <h2 className="text-3xl md:text-4xl font-bold">
               About <span className="text-gradient">Me</span>
             </h2>
