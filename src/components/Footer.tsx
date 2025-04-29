@@ -7,20 +7,21 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <div className="text-2xl font-bold text-gradient">IT Impact</div>
-            <p className="text-muted-foreground mt-2">Shaping the future of technology</p>
+            <div className="text-2xl font-bold text-gradient">Omobolarinwa Quadri</div>
+            <p className="text-muted-foreground mt-2">IT Professional & Educator</p>
           </div>
           
           <div className="flex space-x-8">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">About</a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Features</a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
+            <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">About</a>
+            <a href="#skills" className="text-muted-foreground hover:text-primary transition-colors">Skills</a>
+            <a href="#projects" className="text-muted-foreground hover:text-primary transition-colors">Projects</a>
+            <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
           </div>
         </div>
         
         <div className="border-t border-muted/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} IT Impact. All rights reserved.
+            © {new Date().getFullYear()} Omobolarinwa Quadri. All rights reserved.
           </p>
           
           <div className="flex space-x-4 mt-4 md:mt-0">

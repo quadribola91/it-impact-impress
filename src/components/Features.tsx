@@ -1,20 +1,23 @@
 
 import React from 'react';
 import { 
-  LayoutDashboard, 
-  LayoutGrid, 
-  ArrowRight
+  Laptop, 
+  Code, 
+  Database, 
+  Server,
+  BookOpen,
+  Users
 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
-interface FeatureCardProps {
+interface SkillCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
   delay: number;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, delay }) => {
+const SkillCard: React.FC<SkillCardProps> = ({ icon, title, description, delay }) => {
   return (
     <Card className="glass-card overflow-hidden border-0 h-full" 
       style={{ animationDelay: `${delay}ms` }}>
@@ -29,54 +32,63 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, del
           {description}
         </CardDescription>
       </CardContent>
-      <CardFooter>
-        <button className="text-primary flex items-center group">
-          Learn more 
-          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </button>
-      </CardFooter>
     </Card>
   );
 };
 
-const Features: React.FC = () => {
-  const features = [
+const Skills: React.FC = () => {
+  const skills = [
     {
-      icon: <LayoutDashboard className="h-6 w-6" />,
-      title: "3D Visualization",
-      description: "Experience your data in three dimensions with our advanced visualization tools that bring clarity to complex information."
+      icon: <Laptop className="h-6 w-6" />,
+      title: "IT Support",
+      description: "Expert in providing comprehensive IT support solutions, troubleshooting, and maintenance for various systems and networks."
     },
     {
-      icon: <LayoutDashboard className="h-6 w-6" />,
-      title: "Intuitive Dashboard",
-      description: "Monitor all your metrics at a glance with customizable dashboards designed for maximum productivity and insight."
+      icon: <Code className="h-6 w-6" />,
+      title: "Frontend Development",
+      description: "Proficient in creating responsive web applications using ReactJS, TailwindCSS, and modern JavaScript frameworks."
     },
     {
-      icon: <LayoutGrid className="h-6 w-6" />,
-      title: "Modular Design",
-      description: "Build your perfect workflow with our flexible, component-based system that adapts to your specific needs."
+      icon: <Database className="h-6 w-6" />,
+      title: "Fullstack Development",
+      description: "Building end-to-end applications with ReactJS frontend, Firebase backend, and RESTful API integration."
+    },
+    {
+      icon: <Server className="h-6 w-6" />,
+      title: "Web Development",
+      description: "Creating dynamic and interactive websites with focus on performance, user experience, and modern design principles."
+    },
+    {
+      icon: <BookOpen className="h-6 w-6" />,
+      title: "IT Instruction",
+      description: "Experienced educator teaching ICT, IT support, web development, and programming for both academic and industry standards."
+    },
+    {
+      icon: <Users className="h-6 w-6" />,
+      title: "Data Processing",
+      description: "Skilled in organizing, analyzing and processing data to extract meaningful insights and support decision-making processes."
     }
   ];
   
   return (
-    <section className="py-20 px-4 md:px-8 relative" id="features">
+    <section className="py-20 px-4 md:px-8 relative" id="skills">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-gradient">Powerful</span> Features
+            My <span className="text-gradient">Skills</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Discover the tools that will transform the way you work and create in the digital space.
+            Technical expertise and professional capabilities that I bring to every project and challenge.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
+          {skills.map((skill, index) => (
             <div key={index} className="animate-fade-in opacity-0" style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'forwards' }}>
-              <FeatureCard 
-                icon={feature.icon} 
-                title={feature.title} 
-                description={feature.description} 
+              <SkillCard 
+                icon={skill.icon} 
+                title={skill.title} 
+                description={skill.description} 
                 delay={index * 100}
               />
             </div>
@@ -87,4 +99,4 @@ const Features: React.FC = () => {
   );
 };
 
-export default Features;
+export default Skills;

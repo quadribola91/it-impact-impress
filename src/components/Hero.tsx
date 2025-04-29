@@ -11,18 +11,20 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between w-full z-10 py-16">
         <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left mb-12 lg:mb-0">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-            <span className="text-gradient">Innovative</span> Solution for
-            <br className="hidden md:block" /> Tomorrow's World
+            Hi, I'm <span className="text-gradient">Omobolarinwa Quadri</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
-            Transform your ideas into reality with our cutting-edge technologies and solutions designed for the modern age.
+            IT Support Specialist | Frontend Developer | IT Instructor
+          </p>
+          <p className="text-muted-foreground max-w-xl mx-auto lg:mx-0">
+            Building innovative solutions and sharing knowledge through technology.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-            <Button size="lg" className="rounded-full px-8">
-              Get Started
+            <Button size="lg" className="rounded-full px-8" asChild>
+              <a href="#projects">View Projects</a>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8">
-              Learn More
+            <Button size="lg" variant="outline" className="rounded-full px-8" asChild>
+              <a href="#contact">Contact Me</a>
             </Button>
           </div>
         </div>
