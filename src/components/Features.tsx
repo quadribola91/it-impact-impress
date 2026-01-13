@@ -1,20 +1,19 @@
-import React, { useEffect, useRef } from 'react';
-import { 
-  Laptop, 
-  Code, 
-  Database, 
-  Server,
-  BookOpen,
-  Users
-} from 'lucide-react';
-import { 
+import React, { useEffect, useRef } from "react";
+import { Laptop, Code, Database, Server, BookOpen, Users } from "lucide-react";
+import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious
-} from '@/components/ui/carousel';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -22,7 +21,11 @@ interface ServiceCardProps {
   description: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({
+  icon,
+  title,
+  description,
+}) => {
   return (
     <Card className="glass-card overflow-hidden border-0 h-full">
       <CardHeader>
@@ -44,28 +47,39 @@ const Skills: React.FC = () => {
   const services = [
     {
       icon: <Laptop className="h-6 w-6" />,
-      title: "IT Support",
-      description: "Expert in providing comprehensive IT support solutions, troubleshooting, and maintenance for various systems and networks."
-    },
-    {
-      icon: <Code className="h-6 w-6" />,
-      title: "Frontend Development",
-      description: "Proficient in creating responsive web applications using ReactJS, TailwindCSS, and modern JavaScript frameworks."
-    },
-    {
-      icon: <Database className="h-6 w-6" />,
-      title: "Fullstack Development",
-      description: "Building end-to-end applications with ReactJS frontend, Firebase backend, and RESTful API integration."
+      title: "IT Support & Systems",
+      description:
+        "Expert in providing comprehensive IT support solutions, troubleshooting, and maintenance for various systems and networks.",
     },
     {
       icon: <Server className="h-6 w-6" />,
       title: "Web Development",
-      description: "Creating dynamic and interactive websites with focus on performance, user experience, and modern design principles."
+      description:
+        "Creating dynamic and interactive websites with focus on performance, user experience, and modern design principles.",
+    },
+    {
+      icon: <Server className="h-6 w-6" />,
+      title: "Cybersecurity",
+      description:
+        "Protecting systems and networks through vulnerability assessments, threat analysis, and implementation of security best practices.",
     },
     {
       icon: <BookOpen className="h-6 w-6" />,
-      title: "IT Instruction",
-      description: "Experienced educator teaching ICT, IT support, web development, and programming for both academic and industry standards."
+      title: "IT Training & mentorship",
+      description:
+        "Experienced educator teaching ICT, IT support, web development, and programming for both academic and industry standards.",
+    },
+    {
+      icon: <BookOpen className="h-6 w-6" />,
+      title: "Project Management",
+      description:
+        "Planning, coordinating, and delivering technology projects efficiently while aligning with organizational goals.",
+    },
+    {
+      icon: <BookOpen className="h-6 w-6" />,
+      title: "IT Consulting",
+      description:
+        "Advising organizations on technology decisions, system improvements, and digital transformation strategies.",
     },
     // {
     //   icon: <Users className="h-6 w-6" />,
@@ -94,7 +108,8 @@ const Skills: React.FC = () => {
             My <span className="text-gradient">Services</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Professional solutions and technical expertise I offer to clients and organizations.
+            Professional solutions and technical expertise I offer to clients
+            and organizations.
           </p>
         </div>
 
@@ -109,11 +124,14 @@ const Skills: React.FC = () => {
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {services.map((service, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                <CarouselItem
+                  key={index}
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3"
+                >
                   <div className="h-full">
-                    <ServiceCard 
-                      icon={service.icon} 
-                      title={service.title} 
+                    <ServiceCard
+                      icon={service.icon}
+                      title={service.title}
                       description={service.description}
                     />
                   </div>
