@@ -72,6 +72,14 @@ const Projects: React.FC = () => {
       link: "https://rentwiteaseng.vercel.app",
     },
     {
+      title: "Highcloud Technologies",
+      description:
+        "Highcloud Technologies provides reliable and forward-thinking IT solutions that align with your business priorities for growth, innovation, and operational excellence.",
+      tags: ["React"],
+      image: "",
+      link: "https://hightechnologies.vercel.app",
+    },
+    {
       title: "Jobconnect",
       description:
         "A job portal that connects job seekers with employers, featuring job listings, applications, and resume management.",
@@ -96,20 +104,12 @@ const Projects: React.FC = () => {
       link: "https://spot-on-property.vercel.app",
     },
     {
-      title: "HighFoods",
+      title: "Sofoworalaw",
       description:
-        "A food recipe sharing platform where users can discover, share, and rate recipes from around the world.",
-      tags: ["React", "Firebase", "Recharts"],
+        "A law firm website showcasing services, team, and contact information with a professional design.",
+      tags: ["React"],
       image: "",
-      link: "https://highfoods.vercel.app",
-    },
-    {
-      title: "Affcollective",
-      description:
-        "Africa Female Founders Collective (AFFC) is addressing the significant gender funding gap in Africa's entrepreneurial ecosystem. We work to support female founders by providing them with the resources, networks, and opportunities they need to build scalable and investable ventures.",
-      tags: ["React", "Firebase", "Recharts"],
-      image: "",
-      link: "https://affcollective.org",
+      link: "https://www.sofoworalaw.com",
     },
   ];
 
